@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:lighthouse/constants.dart';
 import 'package:lighthouse/filemgr.dart';
 import 'package:lighthouse/layouts.dart';
+import 'package:lighthouse/constants.dart';
 
 class ScouterHomePage extends StatelessWidget {
   const ScouterHomePage({super.key});
@@ -94,8 +95,19 @@ class ScouterHomePage extends StatelessWidget {
                   image: AssetImage("assets/images/background-hires.png"),
                   fit: BoxFit.cover)),
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: getLaunchers())),
+            
+            children: [
+              Text(
+                Constants.splashTexts[1],
+                style: comfortaaBold(10.0),
+              ),
+              ListView(
+                  shrinkWrap: true, 
+                  children: getLaunchers()
+                ),
+            ],
+          )
+        ),
     );
   }
 }
